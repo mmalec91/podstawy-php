@@ -1,0 +1,20 @@
+1. Matt Zandstra: PHP. Obiekty, wzorce, narzêdzia. Wydanie III
+http://helion.pl/ksiazki/php-obiekty-wzorce-narzedzia-wydanie-iii-matt-zandstra,phpob3.htm
+
+2. Hasin Hayder, Programowanie obiektowe w PHP 5
+http://helion.pl/ksiazki/programowanie-obiektowe-w-php-5-hasin-hayder,probph.htm
+
+3. W³odzimierz Gajda: PHP. Praktyczne projekty
+http://helion.pl/ksiazki/php-praktyczne-projekty-wlodzimierz-gajda,phpprp.htm
+http://phppp.gajdaw.pl/
+
+
+
+Oprogramowanie:
+
+1. XAMPP
+    http://www.apachefriends.org/en/xampp.html
+
+2. PhpStorm
+    http://www.jetbrains.com/phpstorm/
+

@@ -1,0 +1,75 @@
+1. Metoda uruchamiania skryptów
+
+serwer - proces udostêpniaj±cy strony WWW
+klient - proces pobieraj±cy strony WWW
+
+Serwer (po zainstalowaniu XAMPP) - oprogramowanie Apache
+Klient uruchomiona przegl±darka stron WWW
+
+Klient ma dostêp do folderu udostêpnianiego przez serwer.
+W przypadku XAMPP-a domy¶lny folder pracy to:
+
+C:\xampp\htdocs
+
+W pracowni komputerowej nale¿y utworzyæ folder:
+
+C:\xampp\htdocs\janek
+
+lub
+
+C:\xampp\htdocs\zuzia
+
+Dostêp do tego folderu z przegl±darki: u¿yj adresu:
+
+http://localhost/janek
+lub
+http://localhost/zuzia
+
+
+Nale¿y pamiêtaæ, ¿e skrypty PHP powinny mieæ rozssszerzenie .php.
+
+
+Zadanie
+Wykorzystuj±c manager zadañ sprawd¼, ¿e po uruchomieniu oprogramowania
+apache w systemie pojawia siê nowy proces.
+
+
+2. Pierwszy skrypt
+
+Plik: zad1/index.php otre¶ci:
+
+----------
+<?php
+phpinfo();
+?>
+----------
+
+
+Problemy z uruchomieniem:
+- sprawd¼, ¿e adres w przegl±darce to nie jest file:///....
+- sprawd¼ rozszerzenie pliku (powinno byæ .php)
+- zajrzyj do pliku edytorem, który nie modyfikuje wygl±du dokumentu
+
+
+3. Statyczne dokumenty HTML 5
+
+Szablon pustej strony w jêzyku HTML 5:
+
+--------
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+  </head>
+<body>
+
+</body>
+</html>
+--------
+
+
+
+
+
+
