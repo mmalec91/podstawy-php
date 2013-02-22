@@ -68,6 +68,212 @@ Szablon pustej strony w jêzyku HTML 5:
 </html>
 --------
 
+Zad. 2.
+Wykonaj stronê z napisamie Witaj ¶wiecie!
+
+Jak sprawdzaæ poprawno¶æ dokumentu HTML 5?
+HTML validator: http://validator.w3.org/
+
+
+Podstawowe znaczniki HTML 5:
+
+
+<p>...</p>  - akapit tekstu
+<br /> - z³amanie wiersza
+<h1>...</h1> - nag³ówek najwa¿niejszy
+<h2>...</h2> - nag³ówek mniej wa¿ny
+...
+<h6>...</h6> - nag³ówek najmniej wa¿ny
+
+<em></em> - uwypuklenie tekstu
+<strong>...</strong> - mocniejsze uwypuklenie tekstu
+
+Zad. 3.
+Wykonaj stronê z wierszykiem Jana Brzechwy
+
+
+Zad. 4.
+Wykonaj stronê z czterema wierszami Norwida.
+
+
+Kodowanie polskich znaków na stronach WWW: stosujemy utf-8
+
+Zestawienie ró¿nych kodów:http://pl.wikipedia.org/wiki/Kodowanie_polskich_znak%C3%B3w
+
+
+4. Jêzyk PHP
+
+4.1 Osadzanie kodu PHP wewn±trz HTML
+
+Stosujemy znaczniki: <?php ?>
+Mo¿na je wykorzystaæ wielokrotnie.
+Mo¿na nimi podzieliæ skrypt na dowolne fragmenty (np. wewn±trz pêtli itd.)
+Stan programu jest zachowany pomiêdzy poszczególnymi fragmentami oznaczonymi:
+<?php ?>
+
+Co to oznacza:
+
+W pliku:
+
+<h1>Ala</h1>
+
+<?php
+$a = 134;
+?>
+
+<h2>Ma kota</h2>
+
+<?php
+$b = $a + 5;
+//teraz $b == 139
+?>
+
+4.2 Komentarze
+
+Bêdziemy stosowali komentarze wielolinijkowe:
+
+/*   */
+
+oraz
+
+jednolinjkowe:
+
+//
+
+
+4.3 Instrukcje wyj¶cia i drukowanie ci±gów znaków
+
+Instrukcja:
+
+echo "Witaj":
+
+drukuje ci±g Witaj.
+
+Uwaga: string - po polsku ci±g znaków lub krócej: ci±g
+
+Kod C++:
+
+cout << "Witaj";
+
+
+jest równowa¿ny:
+
+echo "Witaj";
+
+Wydrukowanie kilku tekstów:
+
+echo "Czerwony";
+echo "Zielony";
+echo "Niebieski";
+
+spowoduje sklejenie poszczególnych wyrazów w
+
+CzerwonyZielonyNiebieski
+
+W celu oddzielenia wyrazów nale¿y wydrukowaæ bia³e znaki lub znaczniki br:
+
+
+echo "Czerwony";
+echo " ";
+echo "Zielony";
+echo " ";
+echo "Niebieski";
+
+
+lub
+
+echo "Czerwony";
+echo "<br />";
+echo "Zielony";
+echo "<br />";
+echo "Niebieski";
+
+Ci±gi znaków (stringi) ograniczamy znakami " (cudzys³ów).
+Mo¿emy stosowaæ:
+
+' - apostrof
+" - cudzys³ów
+
+echo "Ala ma kota";
+echo 'Kot ma alê';
+
+Ró¿nica: wewn±trz znaków ' nie zachodzi ¿adna interpretacja.
+Nie mo¿na stosowaæ np. \n
+
+Wewn±trz " zachodzi interpretacja pewnych specjalnych znaków, np. \n.
+
+Hint: je¶li nie s± konieczne znaki " nale¿y stosowaæ '.
+
+Instrukcja echo mo¿e byæ zast±piona przez print. Poni¿sze instrukcje s± równowa¿ne:
+
+echo "Witaj";
+print "Witaj";
+
+Nie stosowaæ print.
+
+
+4.4 Operowanie ci±gami znaków
+
+Ci±gi znaków mog± siê rozci±gaæ na wiele wierszy, np.:
+
+echo "
+    Mole foce zjad³y futro,
+    W czym na spacer wyjdê jutro,
+
+    Posz³a foka do oposa,
+    Jestem naga, jestem bosa!
+";
+
+echo '
+    Mole foce zjad³y futro,
+    W czym na spacer wyjdê jutro,
+
+    Posz³a foka do oposa,
+    Jestem naga, jestem bosa!
+';
+
+£±czenie napisów: operator .
+
+echo "Witaj" . " " . "¶wiecie";
+echo "Witaj ¶wiecie";
+
+echo '<br />' . "\n";
+
+
+
+4.5 Zmienne
+
+Nazwy zmiennych poprzedzamy znakiem $, np.:
+
+$a = 15;
+$tytul = "Orzech";
+
+Nie deklarujemy zmiennych i nie okre¶lamy ich typu. Ta sama zmienna mo¿e byæ
+u¿yta do przechowywania warto¶ci dowolnych typów:
+
+$a = 1;
+$a = "Ala";
+$a = false;
+
+Podstawowe typy proste:
+
+integer
+float
+boolean
+string
+
+
+W przypadku niezgodno¶ci typów zachodzi konwersja. Mo¿emy pomno¿yæ stringa
+przez int:
+
+$a = 5;
+$b = "witaj";
+$c = $a * $b;
+
+S³owem: programista odpowiada za kontrolê typów.
+
+
+
 
 
 
