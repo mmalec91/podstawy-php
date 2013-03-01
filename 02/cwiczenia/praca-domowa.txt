@@ -1,0 +1,14 @@
+
+1)
+W klasie Calculator dodaj cztery dodatkowe metody wyznaczające wartości dowolnych wyrażeń algebraicznych.
+Działanie metod sprawdź wywołując je w skrypcie index.php
+
+
+2) W klasie HtmlConverter napisz metody
+
+getUl (konwersja napisu w listę ul)
+getOl (konwersja napisu w listę ol)
+getBr (konwersja napisu: dodanie po każdej literze znacznika <br/>)
+getHr (konwersja napisu: dodanie po każdej literze znacznika <hr/>)
+
+
