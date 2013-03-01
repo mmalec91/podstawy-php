@@ -1,6 +1,6 @@
 <?php
 
-namespace Jan\Math\Calculator;
+namespace Jan\Math;
 
 class Calculator
 {
