@@ -1,0 +1,19 @@
+Napisz skrypt PHP, który przekształci ciąg znaków w listę ul lub ol.
+Każda litera ciągu ma być nowym napisem, np.:
+
+Ala ma kota
+
+<ul>
+    <li>A</li>
+    <li>l</li>
+    <li>a</li>
+    <li> </li>
+    <li>m</li>
+    <li>a</li>
+    <li></li>
+    <li>k</li>
+    <li>o</li>
+    <li>t</li>
+    <li>a</li>
+</ul>
+
