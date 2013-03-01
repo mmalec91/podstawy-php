@@ -203,5 +203,114 @@ Domyślnie składowe klasy tworzymy w następujący sposób:
 
 
 
+4. Składowe statyczne
+
+Deklarowane przy użyciu słowa kluczowego static, np.:
+
+public static $id;
+public static function initializeConnection();
+
+
+Właściwość statyczna: jest współdzielona przez wszystkie obiekty
+(jedna wspólna zmienna dla wszystkich obiektów)
+
+Metoda statyczna: może być wywoływana na rzecz klasy, nie tylko obiektu.
+
+<?php
+class Calculator
+{
+    public static $x;
+
+    public static function add(...)
+    {
+        ...
+    }
+
+}
+?>
+
+Wywołanie metody statycznej add() przy użyciu ::
+
+Calculator::add(...);
+
+w przypadku właściwości:
+
+Calculator::$x = 1234;
+
+
+5. Składowe zwykłe
+
+
+<?php
+class Calculator
+{
+
+    public $y;
+
+    public function setY(...)
+    {
+        ...
+    }
+
+}
+?>
+
+Dostęp do składowej zwykłej (tj. nie statycznej):
+musimy utworzyć obiekt np.:
+
+$obj = new Calculator();
+
+$obj->setY(...);
+
+echo $obj->y;
+
+
+
+6. Dziedziczenie
+
+Dziedziczenie klas definiujemy słowem kluczowym extends.
+
+KLasy do reprezentacji znaczników i kodu HTML.
+
+
+Klasa Ul, Ol
+Klasa List
+Klasa Element
+
+Lista dziedziczy po elemencie
+Ul oraz Ol dziedziczą po List
+
+
+<?php
+//Jan/Html/Element.php
+namespace Jan\Html;
+class Element { }
+?>
+
+<?php
+//Jan/Html/List.php
+namespace Jan\Html;
+class List extends Element { }
+?>
+
+<?php
+//Jan/Html/Ol.php
+namespace Jan\Html;
+class Ol extends List { }
+?>
+
+<?php
+//Jan/Html/Ul.php
+namespace Jan\Html;
+class Ul extends List { }
+?>
+
+
+
+
+
+
+
+
 
 
