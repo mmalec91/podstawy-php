@@ -15,8 +15,17 @@ use Jan\Math\Calculator;
 echo '3 + 11 = ';
 echo Calculator::add(3, 11);
 
+?>
+
+<hr />
+
+<?php
+
+echo '7 * 5 = ';
+echo Calculator::multiply(7, 5);
 
 ?>
+
 
 </body>
 </html>
