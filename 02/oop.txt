@@ -58,6 +58,11 @@ Globalna nazwa klasy:
     Jan\Math\Calculator
 
 Plik z klasą nazywa się Calculator.php
+
+Uwaga: w jednym pliku będziemy umieszczali jedną klasę.
+Zasada ta może być złamana w specyficznych okolicznościach
+np. podczas pisania testów jednostkowych.
+
 Plik jest umiesczony w folderze Jan\Math
 
 W pliku Calculator.php umieszczamy zawartość:
@@ -110,8 +115,91 @@ $d = new \DateTime();
 
 
 
+3. Składowe klasy
+
+Klasa może zawierać właściwości i metody.
+
+<?php
+
+class User
+{
+
+    private $imie;
+    private $nazwisko;
+
+    public function setImie($imie)
+    {
+    }
+
+    public function getImie()
+    {
+    }
+
+}
+
+?>
+
+Cała klasa musi wystąpić w jednym pliku.
+Implementacja metody (tj. treść) występuje w miejscu deklaracji.
+
+Widoczność składowych:
+- public
+- protected
+- private
+
+Public:    składowa dostępna z dowolnego miejsca (zawsze widoczna).
+Protected: składowa widoczna w klasie i w klasach potomnych.
+Private:   składowa dostępna wyłącznie wewnątrz metod danej klasy.
 
 
+Domyślnie: składowe są publiczne. Najlepiej jednak to ręcznie deklarować.
+
+<?php
+
+//plik Jan/User.php
+
+namespace Jan;
+
+class User
+{
+     private $nazwisko;
+
+     protected $plec;
+
+     public $wiek;
+
+}
+
+?>
+
+Użycie:
+
+<?php
+//index.php
+
+require_once 'Jan/User.php';
+
+use Jan\User;
+
+$obj = new User();
+
+//Ok: składowa publiczna
+$obj->wiek = 15;
+
+
+//Błąd: składowa protected
+$obj->plec = 'M';
+
+//Błąd: składowa private
+$obj->nazwisko = 'Kowalski';
+
+?>
+
+
+Domyślnie składowe klasy tworzymy w następujący sposób:
+- właściwości - prywatne
+- dla właściwości: metody set/get ustalające/zwracające wartości
+- pozostałe metody: różnie
 
 
 
