@@ -1,0 +1,2 @@
+Napisz klasê do wykonywania prostych obliczeñ matematycznych:
++, -, *, /, x^2 + 1, (1 + x)/(1 - x)
