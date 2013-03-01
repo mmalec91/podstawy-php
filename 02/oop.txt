@@ -1,0 +1,25 @@
+Programowanie obiektowe w PHP
+(OOP - Object Oriented Programming)
+
+1. Klasy i obiekty
+
+Klasa - typ zmiennych
+Obiekt - zmienna
+
+Obiekt = instancja klasy, egzemplarz klasy, instancja
+
+
+<?php
+
+class Calculator { }
+
+$obj = new Calculator();
+
+
+//Klasa Calculator
+//obiekt $obj
+
+?>
+
+
+

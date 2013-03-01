@@ -1,0 +1,183 @@
+1. Instrukcje sterujące:
+
+a) if
+
+if () {
+    ;
+}
+
+
+b) if-else
+
+if () {
+    ;
+} else {
+    ;
+}
+
+c)
+
+if () {
+    ;
+} else if () {
+    ;
+} else if () {
+    ;
+} else if () {
+    ;
+}
+
+
+d) switch
+
+switch () {
+case 1:
+    break;
+
+case 2:
+    break;
+
+default:
+    break;
+
+}
+
+Uwagi: nie stosuj instrukcji break poza instrukcją switch.
+
+Zmienna sterująca może być typu string.
+
+
+e) for
+
+for ($i = 0; $i < 10; $i++) {
+    echo $i;
+}
+
+f) foreach
+
+pętla do przetwarzania tablic oraz obiektów
+
+$imiona = array('Jan', 'Anna', 'Piotr');
+
+foreach ($imiona as $imie) {
+    echo $imie;
+}
+
+foreach ($imiona as $key => $value) {
+    echo $key;
+    echo $value;
+}
+
+g) while
+
+while () {
+    ;
+}
+
+
+h) do-while
+
+
+do {
+    ;
+} while ();
+
+
+i)
+
+continue - omiń bieżący refren pętli (for, foreach, do-while, while)
+
+for ($i = 0; $i < ; $i++) {
+
+    ;
+
+    if () {
+        continue;
+    }
+
+    ;
+
+}
+
+
+j) return
+
+zakończenie wykonywania podprogramu
+
+
+2. Podział skryptu na wiele plików
+
+Zewnętrzne skrypty dołączamy instrukcjami:
+
+require_once
+require
+include_once
+include
+
+Podstawowe użycie:
+
+mamy dwa pliki: index.phporaz klasę Calculator w pliku Calculator.php.
+
+W celu użycia klasy Calculator w pliku index.php musimy koniecznie
+w pliku index.php wywołać jedną z czterech podanych funkcji, np.:
+
+require_once 'Calculator.php';
+
+
+W stosunku do klas należy używać: require_once.
+Szablony dołączamy instrukcjami include.
+
+
+Różnica pomiędzy include a require: generowany błąd.
+W przypadku require: brak pliku powoduje zatrzymanie skryptu.
+W przypadku include, skrypt nie będzie przerwany.
+
+
+Klasy będziemy zapisywali
+w zewnętrznych plikach i będziemy je dołączali instrucją require_once.
+
+
+3. Funkcje w php
+
+
+Nagłówek:
+
+function nazwaFunkcji(parametry)
+{
+     treść funkcji....
+}
+
+
+Wartość funkcji zwracamy instrukcją return.
+Przykładowe wywołanie funkcji:
+
+$zmienna = nazwaFunkcji();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
