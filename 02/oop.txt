@@ -22,4 +22,98 @@ $obj = new Calculator();
 ?>
 
 
+2. Nazewnictwo
+
+Nazwy klas są wieloczłonowe, poszczególne człony oddzielamy znakiem \
+
+Jan\Math\Calculator
+Piotr\String\HtmlConverter
+
+Pełna nazwa klasy: Jan\Math\Calculator
+
+    Jan\Math    -  przestrzeń nazw
+    Calculator  -  nazwa klasy
+
+Ograniczenie: jeśli projekt składa się z wielu plików to:
+ - wszystkie pliki muszą stosować przestrzenie nazw
+ - żaden plik nie może stosować przestrzeni nazw
+
+
+Standaryzacja języka PHP, tak by tworzony kod mógł być współdzielony
+w wielu różnych projektach jest prowadzona przez grupę najbardziej
+uznanych programistów:
+
+    http://www.php-fig.org/
+    https://github.com/php-fig/fig-standards
+
+Standardy narzucają stosowanie przestrzeń nazewniczych.
+
+W celu ułatwienia automatycznego ładowania klas należy
+klasy umieszczać w folderach, których nazwa wynika z użytej
+przestrzeni nazewniczej. Np.
+
+
+Globalna nazwa klasy:
+
+    Jan\Math\Calculator
+
+Plik z klasą nazywa się Calculator.php
+Plik jest umiesczony w folderze Jan\Math
+
+W pliku Calculator.php umieszczamy zawartość:
+
+<?php
+
+namespace Jan\Math;
+
+class Calculator { }
+
+?>
+
+Użycie klasy Calculator
+
+  a) korzystamy z pełnej nazwy
+
+    <?php
+
+    require_once 'Jan/Math/Calculator.php';
+
+    $obj = new Jan\Math\Calculator();
+
+    ?>
+
+
+   b) dzięki instrukcji use możemy korzystać ze skróconej nazwy klasy
+
+    <?php
+
+    require_once 'Jan/Math/Calculator.php';
+
+    use Jan\Math\Calculator;
+
+    $obj = new Calculator();
+
+    ?>
+
+
+
+
+Obiekty w globalnej przestrzeni nazewniczej poprzedzamy znakiem \
+
+(np. wyjątki SPL http://www.php.net/manual/pl/spl.exceptions.php)
+
+throw \InvalidArgumentException();
+
+(np. klasa DateTime http://php.net/manual/pl/class.datetime.php)
+
+$d = new \DateTime();
+
+
+
+
+
+
+
+
+
 
