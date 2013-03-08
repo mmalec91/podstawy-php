@@ -1,0 +1,4 @@
+Przeczytaj rozdzia³y od 10 do 15 ksi±¿ki:
+
+PHP. Praktyczne projekty
+

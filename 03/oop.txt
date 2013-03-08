@@ -1,0 +1,371 @@
+OOP - c.d.
+
+1. Metody dostępu do właściwości
+
+Właściwości, o ile nie jest konieczne rozszerzanie ich widoczności,
+będziemy deklarowali jako prywatne i będziemy definiowali metody
+get oraz set.
+
+Na przykład:
+
+class MultiplicationTable
+{
+    private $rows;
+    private $columns;
+
+    public function setRows($rows)
+    {
+        $this->rows = $rows;
+
+        return $this;
+    }
+
+    public function getRows($rows)
+    {
+        return $this->rows;
+    }
+
+    public function setColumns($columns)
+    {
+        $this->columns = $columns;
+
+        return $this;
+    }
+
+    public function getColumns()
+    {
+        return $this->columns;
+    }
+}
+
+
+Jaki jest cel instrukcji:
+
+return $this;
+
+w metodach set?
+
+Dzięki takiemu rozwiązaniu możemy metody wywoływać wielokrotnie, np.:
+
+
+$obj
+    ->setRows(3)->setColumns(7)
+    ->setRows(2)->setColumns(3);
+
+Method chaining - łańcuchowe wywoływanie metod.
+
+Obecnie - powszechne.
+
+
+2. Dziedziczenie a składowe
+
+W przypadku dziedziczenia składowe są dostępne wewnątrz klasy,
+w której zostały zadeklarowane oraz we wszystkich klasach potomnych.
+
+Element
+
+  List
+
+      Ol
+      Ul
+
+
+Klasa Element ma reprezentować pojedynczy element HTML,
+np. <ul></ul>  lub <strong></strong> lub <em></em>
+lub <img src="" alt="" />
+
+Cecha wspólna wszystkich elementów: mają kod HTML, który można wygenerować.
+Metoda do generowania kodu HTML będzie się nazywała render().
+Umieścimy ją we wspólnym przodku (klasa Element). Dzięki temu będzie ona
+dostępna w klasach List oraz Ol, Ul.
+
+
+class Element
+{
+    public function render()
+    {
+    }
+}
+
+Jeśli klasy List, Ul oraz Ol dziedziczą po klasie Element, wówczas metodę
+render możemy wywoływać dla wszystkich klas:
+
+
+$e = new Element();
+$e->render();
+
+
+$ol = new Ol();
+$ol->render();
+
+
+Podobnie jest z właściwościami. Właściwości zdefniowane w klasie
+bazowej, będą dostępne w klasie, która po niej dziedziczy.
+
+Jeśli w klasie Element zdefinioujemy właściwość empty:
+
+class Element
+{
+    public $empty;
+}
+
+to właściwość ta będzie dostępna w klasach List, Ul oraz Ol.
+
+
+$e = new Element();
+$e->empty = true;
+
+
+$ol = new Ol();
+$e->empty = false;
+
+
+Dostępnością składowych w klasach dziedziczonych sterujemy przy użyciu
+słowa kluczowego protected.
+
+Składowe public - widoczne wszędzie.
+Składowe protected - tylko w klasach dziedziczących.
+Składowe private - tylko w klasie, w której są zdefiniowane.
+
+class Element
+{
+    protected $x;
+}
+
+Wywołanie:
+
+$e = new Element();
+$e->x = 4;
+
+jest błędne.
+
+
+class List extends Element
+{
+
+    public function y()
+    {
+        //jest widoczne: składowa x jest dostępna w klasie list
+        //bo klasa list dziedziczy po klasie Element
+        $this->x = 6;
+    }
+
+}
+
+
+Widoczność składowych możemy zwiększać, nie możemy zmniejszać.
+
+class A
+{
+    private   $p;
+    protected $q;
+    public    $r;
+}
+
+class B extends A
+{
+    private   => private, protected, public
+    protected => protected, public
+    public    => public
+
+    np.
+
+    protected $p;
+    public $q
+
+    niepoprawne:
+    private $r;
+}
+
+
+3. Errata:
+
+Składowe stałe są zawsze widoczne jako publiczne. Nie można ich modyfikować.
+
+class A
+{
+    const ERROR_NOT_FOUND = 404;
+
+}
+
+
+Odwołania:
+
+echo A::ERROR_NOT_FOUND;
+
+
+
+4. Metody wirtualne
+
+W PHP wszystkie metody są wirtualne.
+Dlatego nie ma w języku słów kluczowych virtual czy override.
+
+
+Na czym polega zachowanie metod wirtualnych?
+Metoda zdefiniowana w klasie potomnej jest wywoływana
+przez metodę klasy bazowej.
+
+
+class Stworzenie
+{
+    public function drukuj()
+    {
+        echo 'Informacje o stworzeniu: ';
+        echo $this->kimJestem();
+    }
+
+    public function kimJestem()
+    {
+        return 'storzenie nieznane';
+    }
+}
+
+$s = new Stworzenie();
+$s->drukuj();
+
+Wywołane zostaną kolejno metody: Stworzenie::drukuj oraz Stworzenie::kimJestem
+Wydrukowany tekst:
+
+    Informacje o stworzeniu: storzenie nieznane
+
+
+
+
+
+class Czlowiek extends Stworzenie
+{
+    /*
+     * Metoda o tej samej nazwie co metoda w klasie bazowej
+     * Automatycznie staje się metodą wirtualną
+     */
+    public function kimJestem()
+    {
+        return 'Czlowiek';
+    }
+}
+
+$cz = new Czlowiek();
+$cz->drukuj();
+
+
+Praca domowa: spróbuj przeczytać
+
+http://en.wikipedia.org/wiki/Polymorphism_in_object-oriented_programming
+
+
+5. Odwołania do metod własnych oraz z klasy bazowej:
+
+
+
+
+class Stworzenie
+{
+    public function drukuj()
+    {
+        echo 'Informacje o stworzeniu: ';
+        echo $this->kimJestem();
+    }
+
+    public function kimJestem()
+    {
+        return 'storzenie nieznane';
+    }
+}
+
+
+class Czlowiek extends Stworzenie
+{
+    public function kimJestem()
+    {
+        return 'Czlowiek';
+    }
+
+    public function aaa()
+    {
+        //wywołanie własnej metody
+        //bez podania jej nazwy
+        //ważne dla metod statycznych
+        self::kimJestem();
+
+        //wywołanie odziedziczonej metody
+        //bez podania jej nazwy
+        parent::kimJestem();
+
+        //wywoła tylko moją metodę
+        //nie umożliwia dostępu do metody odziedziczonej
+        $this->kimJestem();
+
+    }
+
+
+
+}
+
+
+
+
+
+
+6. Konstruktory i destruktory
+
+Konstruktor: publiczna metoda o nazwie __construct()
+
+
+public function __construct()
+{
+}
+
+Może mieć dowolne parametry.
+
+Metoda ta jest automatycznie wywoływana podczas tworzenia obiektu
+operatorem new. Instrukcja:
+
+$x = Stworzenie();
+
+może być zapisywana:
+
+$x = Stworzenie;
+
+powoduje wywołanie metody:
+
+
+class Stworzenie
+{
+    public function __construct()
+    {
+    }
+}
+
+
+Mówienie o konstruktorach prywatnych lub chronionych nie ma sensu.
+
+Możemy ją nadpisywać tak jak każdą inną metodę.
+
+W PHP odziedziczony konstruktor nie jest automatycznie wywoływany.
+Trzeba go wywołać ręcznie.
+
+
+
+class Czlowiek
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

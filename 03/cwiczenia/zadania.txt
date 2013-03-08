@@ -1,0 +1,7 @@
+Modyfikacje tabeli html:
+
+³adny format
+ustalenie liczby spacji wcinaj±cych kod
+
+bez wiersza 1
+bez kolumny 1
