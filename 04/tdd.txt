@@ -22,3 +22,85 @@ Pe³ne wywo³anie:
 C:\xampp\php\phpunit --version
 
 
+2) Pierwsze u¿ycie
+
+Zadanie programistyczne: napisz klasê Reader,
+która u³atwi wczytywanie i przetwarzenie plików tekstowych.
+Mamy uzyskaæ dostêp do poszczególnych wierszy pliku
+oraz do liczby odczytanych wierszy.
+
+
+Klasa: Janek\File\Txt\Reader
+Plik:  Reader.php
+
+Interfejs klasy:
+   konstruktor: umo¿liwia podanie nazwy pliku
+   setFilename(), getFilename() - ustalanie i odczyt nazwy pliku
+   load()       - odczytuje podany plik
+   getItem($i)  - zwraca ity wiersz odczytany z pliku
+   getCount()   - liczba odczytanych elementów
+   getItems()   - zwraca ca³± kolekcjê elementów
+
+
+$plik = new Reader('dane/auta.txt');
+$plik->load();
+echo $plik->getItem(5);    // wydruk pi±tego wiersza
+echo $plik->getCount();    // zwraca liczbê elementów
+
+
+Przygotowanie testów jednostkowych:
+a) plik phpunit.xml
+b) katalog Tests
+c) plik Tests/ReaderTest.php
+d) bootstrap.php
+
+Plik bootstrap.php jest uruchamiany dziêki instrukcji instalacyjnej
+z pliku phpunit.xml. Bootstrap.php odpowiada za za³adowanie
+testowanej klasy (autoloading). W kodzie bootstrap.php wystêpuj±:
+
+    __DIR__  - sta³a wskazuj±ca folder, w którym
+               jest umieszczony bie¿±cy skrypt
+
+    DIRECTORY_SEPARATOR - znak, który jest separatorem katalogów:
+        w Windows \
+        w Linux   /
+
+
+Uruchamiane testy s± ustalone w pliku XML:
+        <testsuite name="Reader Test Suite">
+            <directory>./Tests/</directory>
+        </testsuite>
+
+
+Struktura pliku z testami:
+
+Klasa:          Abc
+Klasa testowa:  AbcTest
+
+Metoda:         def
+Metoda testowa: defTest
+
+
+Klasa AbcTest ma dziedziczyæ po klasie \PHPUnit_Framework_TestCase.
+Przestrzeñ nazw klasy testowej powstaje przez dodanie do przestrzeni
+klasy cz³onu Texts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
