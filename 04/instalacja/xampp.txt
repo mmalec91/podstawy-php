@@ -1,14 +1,15 @@
-XAMPP
+
+Naprawianie XAMPP
 
 http://www.apachefriends.org/en/xampp.html
 
 Version: 1.8.1
 
-
-
 ==================================
-PROBLEMS WITH PEAR
-
+c:
+cd \
+cd xampp
+cd php
 
 pear config-show
 
