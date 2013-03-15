@@ -1,4 +1,3 @@
-
 Naprawianie XAMPP
 
 http://www.apachefriends.org/en/xampp.html
@@ -30,9 +29,4 @@ pear -c c:\xampp\php\pear.ini config-set www_dir c:\xampp\php\pear\www
 
 pear -c c:\xampp\php\pear.ini config-show
 
-
 ==================================
-
-pear -c c:\xampp\php\pear.ini upgrade-all
-
-
