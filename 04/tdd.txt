@@ -1,0 +1,24 @@
+TDD - Test Driven Development
+
+Programowanie sterowane testami
+
+Obecnie jest to jedna z powszechnie stosowanych metod
+zapewniania jako¶ci kodu.
+
+W jêzyku PHP testy oprogramowujemy wykorzystuj±c narzêdzie PHPUnit.
+
+PHPUnit to ¶rodowisko do uruchamiania testów jednostkowych.
+
+1) Instalacja PHPUnit.
+
+Manual Phpunit: http://www.phpunit.de/manual/current/en/
+
+Phpunit uruchamiamy w konsoli poleceniem:
+
+phpunit
+
+Pe³ne wywo³anie:
+
+C:\xampp\php\phpunit --version
+
+

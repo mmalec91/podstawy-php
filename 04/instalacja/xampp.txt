@@ -1,0 +1,42 @@
+XAMPP
+
+http://www.apachefriends.org/en/xampp.html
+
+Version: 1.8.1
+
+
+
+==================================
+PROBLEMS WITH PEAR
+
+
+pear config-show
+
+pear config-create / C:\xampp\php\pear.ini
+
+pear -c c:\xampp\php\pear.ini config-set doc_dir c:\xampp\php\pear\docs
+pear -c c:\xampp\php\pear.ini config-set bin_dir c:\xampp\php
+pear -c c:\xampp\php\pear.ini config-set ext_dir c:\xampp\php\ext
+pear -c c:\xampp\php\pear.ini config-set php_dir c:\xampp\php\pear
+pear -c c:\xampp\php\pear.ini config-set cache_dir c:\xampp\php\cache
+pear -c c:\xampp\php\pear.ini config-set cfg_dir c:\xampp\php\cfg
+pear -c c:\xampp\php\pear.ini config-set data_dir c:\xampp\php\data
+pear -c c:\xampp\php\pear.ini config-set download_dir c:\xampp\php\download
+pear -c c:\xampp\php\pear.ini config-set php_bin c:\xampp\php\php.exe
+pear -c c:\xampp\php\pear.ini config-set temp_dir c:\xampp\php\tmp
+pear -c c:\xampp\php\pear.ini config-set test_dir c:\xampp\php\pear\tests
+pear -c c:\xampp\php\pear.ini config-set www_dir c:\xampp\php\pear\www
+
+pear -c c:\xampp\php\pear.ini config-show
+
+pear -c c:\xampp\php\pear.ini upgrade-all
+
+==================================
+
+APC
+
+http://dev.freshsite.pl/php-accelerators/apc.html
+
+php_apc_3114_beta_php54_win7-2008.zip
+php_apc_3114_beta_php54_win7-2008.dll
+

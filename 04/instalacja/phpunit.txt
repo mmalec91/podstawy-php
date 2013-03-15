@@ -1,0 +1,9 @@
+PHPUnit
+
+http://www.phpunit.de/manual/current/en/
+
+pear -c c:\xampp\php\pear.ini config-set auto_discover 1
+pear -c c:\xampp\php\pear.ini install pear.phpunit.de/PHPUnit
+
+phpunit --help
+phpunit --version
