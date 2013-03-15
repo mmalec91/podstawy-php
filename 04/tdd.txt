@@ -86,8 +86,18 @@ Przestrzeñ nazw klasy testowej powstaje przez dodanie do przestrzeni
 klasy cz³onu Texts.
 
 
+Po przygotowaniu plików:
+    phpunit.xml
+    Tests/bootstrap.php
+    AbsTest.php
 
+testy uruchamiammy poleceniem:
 
+    C:\xampp\php\phpunit
+
+lub (gdy ¶cie¿ki dostêpu s± skonfigurowane)
+
+    phpunit
 
 
 

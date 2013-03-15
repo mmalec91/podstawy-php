@@ -18,12 +18,16 @@ class Reader
     {
     }
 
-    public function setFilename()
+    public function setFilename($filename)
     {
+        $this->filename = $filename;
+
+        return $this;
     }
 
     public function getFilename()
     {
+        return $this->filename;
     }
 
     public function load()
