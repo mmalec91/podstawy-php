@@ -1,0 +1,17 @@
+Zadanie 1
+renderowanie tabel poziomych
+
+<table>
+    <tr>
+        <td>audi</td>
+        <td>fiat</td>
+    </tr>
+</table>
+
+
+Zadanie 2
+Jak użyć klasy do konwersji napisu w tabelę?
+
+Zadanie 3
+Jak przekonwertować napis w tabelę dwuwymiarową (napis po przekątnej).
+
