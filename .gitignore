@@ -1,0 +1,7 @@
+/.idea/
+/nbproject/
+/coverage/
+/docs/
+/phpcs/
+/tmp/
+/vendor/
