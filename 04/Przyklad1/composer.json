@@ -1,0 +1,6 @@
+{
+    "autoload": {
+        "psr-0": { "Gajdaw\\File\\Txt": "" }
+    },
+    "target-dir": "Gajdaw/File/Txt"
+}
