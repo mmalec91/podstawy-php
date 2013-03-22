@@ -1,3 +1,5 @@
+1. Composer (u¿ycie w celu automatycznego generowania autoloadingu)
+
 Menad¿er zale¿no¶ci Composer dzia³a na podstawie pliku composer.json.
 Plik ten jest w formacie JSON (JavaScript Object Notation).
 
@@ -33,4 +35,102 @@ lub w pracowni:
     c:\xampp\php\php c:\xampp\php\composer.phar install
 
 oprogramowanie composer utworzy folder vendor/, a w nim plik autoload.php.
+
+
+
+2. TDD 
+ Po co?
+ - sprawdzamy dzia³anie ka¿dej funkcji z osobna (wyizolowanej)
+ - usuwamy 95% b³êdów
+ - jest to obecnie standard produkcji oprogramowania
+   stosowany przez wiêkszo¶æ firm
+
+
+3. TDD w praktyce: przyk³ad minimalny
+
+Pliki:
+- Tablica.php   - testowana klasa (pe³na nazwa: Janek\Util\Tablica)
+- phpunit.xml   - konfiguracja testów jednostkowych
+- composer.json - zale¿no¶ci, które wykorzystamy do generowania plików
+                  autoload.php
+- TablicaTest.php - klasa testów
+
+
+Tre¶æ plików (Klasa Gajdaw\Util\Tablica):
+-----------------------------------------
+Tablica.php
+<?php
+
+namespace Gajdaw\Util;
+
+class Tablica
+{
+    public function setItems($items)
+    {
+        throw new \RuntimeException('Not implemented yet');
+    }
+}
+-----------------------------------------
+phpunit.xml
+
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Tablica test suite">
+            <directory>./Tests/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
+
+-----------------------------------------
+composer.json
+{
+    "autoload": {
+        "psr-0": { "Gajdaw\\Util": "" }
+    },
+    "target-dir": "Gajdaw/Util"
+}
+
+-----------------------------------------
+<?php
+
+namespace Gajdaw\Util\Tests;
+
+class TablicaTest extends \PHPUnit_Framework_TestCase
+{
+    public function testSetItems()
+    {
+
+        $this->markTestIncomplete('Not implemented');
+    }
+}
+
+
+4. Uruchomienie przyk³adu minimalnego TDD
+
+Je¶li phpunit i composer s± dostêpne w ¶cie¿kach:
+
+    composer install
+    phpunit
+
+
+Na pracowni:
+
+    c:\xampp\php\php c:\xampp\php\composer.phar install
+    c:\xampp\php\phpunit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
