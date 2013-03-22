@@ -27,6 +27,11 @@ class AbcTest extends \PHPUnit_Framework_TestCase
             $k->render()
         );
 
+        $this->assertEquals(Abc::TYPE_VETICAL, $k->getType());
+
+        $k->setType('vertical');
+        $this->assertEquals(Abc::TYPE_VETICAL, $k->getType());
+
         $k = new Abc('ala');
         $this->assertEquals(
             '<table><tr><td>a</td></tr><tr><td>l</td></tr><tr><td>a</td></tr></table>',
