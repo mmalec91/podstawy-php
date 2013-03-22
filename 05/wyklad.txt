@@ -121,6 +121,11 @@ Na pracowni:
 
 
 
+Pokrycie testami:
+
+    phpunit  --coverage-html coverage/
+
+
 
 
 
