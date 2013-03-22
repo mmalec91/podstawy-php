@@ -1,3 +1,8 @@
+Composer - dependency manager - instalacja
+(menad¿er zale¿no¶ci)
+
+getComposer.org
+
 c:
 cd \
 cd xampp
@@ -6,5 +11,10 @@ cd php
 php -r "eval('?>'.file_get_contents('http://getcomposer.org/installer'));"
 
 W pracowni:
+
+sprawdzenie, czy chodzi composer:
+
+c:\xampp\php\php c:\xampp\php\composer.phar
+
 
 c:\xampp\php\php c:\xampp\php\composer.phar install

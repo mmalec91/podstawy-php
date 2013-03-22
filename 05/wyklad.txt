@@ -1,0 +1,36 @@
+Menad¿er zale¿no¶ci Composer dzia³a na podstawie pliku composer.json.
+Plik ten jest w formacie JSON (JavaScript Object Notation).
+
+Bibliografia o jêzyku JSON:
+
+    http://pl.wikipedia.org/wiki/JSON
+    http://en.wikipedia.org/wiki/JSON
+    http://www.json.org/
+
+My wykorzystamy oprogramowanie composer do generowania
+plików autoload.php.
+
+
+W celu uruchomienia programu composer nale¿y najpierw przygotowaæ plik
+composer.json.
+
+Przyk³adowa zawarto¶æ pliku composer.json:
+
+
+            {
+                "autoload" : {
+                    "psr-0" : { "Moja\Przestrzen\Nazw" : ""}
+                },
+                "target-dir" : "Moja/Przestrzen/Nazw"
+            }
+
+Po wydaniu polecenia:
+
+    composer install
+
+lub w pracowni:
+
+    c:\xampp\php\php c:\xampp\php\composer.phar install
+
+oprogramowanie composer utworzy folder vendor/, a w nim plik autoload.php.
+
