@@ -293,6 +293,10 @@ Metoda __invoke jest wywoływana, gdy do obiektu odwołujemy się jak do funkcji
 
 Metoda __set_state jest wywoływana, gdy na obiekcie wywołujemy metodę var_export().
 
+Funkcja var_export() zwraca uproszczoną reprezentację zmiennej. Jest ona przydatna
+między innymi podczas debuggowania skryptu.
+
+
 
 
 
