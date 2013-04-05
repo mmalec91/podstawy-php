@@ -297,6 +297,36 @@ Funkcja var_export() zwraca uproszczoną reprezentację zmiennej. Jest ona przyd
 między innymi podczas debuggowania skryptu.
 
 
+Przykład: __toString
+
+    Co chcemy osiągnąć?
+
+    $o = new Osoba('Jan');
+    echo $o;
+
+Zadanie
+Jak napisać metodę __toString, która zwróci wartości wszystkich właściwości
+obiektu oddzielone spacjami?
+
+1. Konwersja obiektu w tablicę:  rzutowanie
+
+    (array)$obiekt
+
+2. Łączenie wszystkich elementów tablicy w jeden string:
+
+    implode(' ', $tablica)
+
+
+Przykład __set_state
+
+
+
+
+
+
+
+
+
 
 
 
