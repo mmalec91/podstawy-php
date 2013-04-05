@@ -97,7 +97,18 @@ class Osoba
     }
 }
 
+Teraz obiekty możemy konstruować następująco:
 
+$o1 = new Osoba();
+$o2 = new Osoba('Piotr');
+$o3 = new Osoba('Adam', 'Kowalski');
+$o4 = new Osoba('Nikodem', 'Dyzma', 49);
+
+Wadą powyższego rozwiązania jest brak możliwości wywołania:
+
+$o5 = new Osoba('Nowak');
+
+Powyższe wywołanie ustali imię na Nowak.
 
 
 
