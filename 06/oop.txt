@@ -178,6 +178,10 @@ typ zmiennej:
    is_array()   -  wynik logiczny true mówi, że parametr jest tablicą
    is_integer() -  wynik logiczny true mówi, że parametr jest zmienną całkowitoliczbową
 
+Pełna dokumentacja funkcji badających typ zmiennych jest dostępna na stronie:
+
+    http://www.php.net/manual/en/ref.var.php
+
 
     public function __construct($options = null, $nazwisko = null, $wiek = null)
     {
@@ -225,6 +229,94 @@ Powyższa implementacja pozwala na wywołania:
         'nazwisko' => 'Nowak',
         'wiek' => 37
     ));
+
+2. Metody magiczne
+
+W klasach nie należy stosować następujących nazw metod:
+
+__construct
+__destruct
+__call
+__callStatic
+__get
+__set
+__isset
+__unset
+__sleep
+__wakeup
+__toString
+__invoke
+__set_state
+__clone
+
+Powyższe metody są metodami wirtualnymi, wywoływanymi podczas różnych zdarzeń.
+
+Metody te są nazywane magicznymi i umożliwiają dostosowanie klas do własnych potrzeb.
+Pełna dokumentacja metod magicznych jest zawarta na stronie:
+
+    http://php.net/manual/en/language.oop5.magic.php
+
+
+Metoda __construct jest wywoływana automatycznie podczas tworzenia obiektu
+operatorem new.
+
+Metoda __destruct jest wywoływana automatycznie podczas niszczenia obiektu
+(tj. gdy obiekt przestaje istnieć).
+
+Metoda __call jest wywoływana wówczas, gdy wywołamy niezdefiniowaną metodę.
+
+Metoda __callStatic jest wywoływana wówczas, gdy wywołamy niezdefiniowaną metodę statyczną.
+
+Metoda __get jest wywoływana podczas dostępu (odczytu) do nieistniejącej właściwości.
+
+Metoda __set jest wywoływana podczas dostępu (zapisu) nieistniejącej właściwości.
+
+Metoda __isset jest wywoływana podczas badania istnienia nieistniejącej właściwości.
+
+Metoda __unset jest wywoływana podczas usuwania nieistniejącej właściwości.
+
+Metoda __sleep jest wywoływana podczas serializacji obiektu.
+
+Metoda __wakeup jest wywoływana podczas deserializacji (tj. procesu odwrotnego do serializacji) obiektu.
+
+Serializacja obiektu polega na konwersji obiektu do formatu, który może być zapisany
+na dysku lub w bazie danych. Dzięki temu obiekt możemy zapisać na dysku i później
+odtworzyć. Zapisanie obiektu na dysku wykorzystuje serializację.
+Odtworzenie obiektu na podstawie zapisu - proces odwrotny do serializacji -
+deserializacja.
+
+Metoda __toString jest wywoływana podczas konwersji obiektu w typ string.
+
+Metoda __clone jest wywoływana podczas klonowania obiektu.
+
+Metoda __invoke jest wywoływana, gdy do obiektu odwołujemy się jak do funkcji.
+
+Metoda __set_state jest wywoływana, gdy na obiekcie wywołujemy metodę var_export().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
