@@ -1,0 +1,6 @@
+Programowanie obiektowe - c.d.
+
+1. Konstruktory i ich parametry
+
+
+
