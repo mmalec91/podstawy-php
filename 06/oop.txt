@@ -2,6 +2,37 @@ Programowanie obiektowe - c.d.
 
 1. Konstruktory i ich parametry
 
+Konstruktor bezparametrowy ma definicję:
 
+
+class Osoba
+{
+    private $imie;
+
+    private $nazwisko;
+
+    public function __construct()
+    {
+    }
+
+    public setImie($imie)
+    {
+    }
+
+    public setNazwisko($nazwisko)
+    {
+    }
+}
+
+Tak zdefiniowany konstruktor wywołujemy:
+
+$obj = new Osoba();
+
+W celu przypisania wartości do pól wywołujemy metody, np.:
+
+$obj->setImie('Jan');
+$obj->setNazwisko('Nowak');
+
+Jeśli konstruktor ma parametr, np:
 
 
