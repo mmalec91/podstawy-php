@@ -110,6 +110,54 @@ $o5 = new Osoba('Nowak');
 
 Powyższe wywołanie ustali imię na Nowak.
 
+Chcemy umożliwić wywołanie, w którym podamy tylko nazwisko.
+Jak to zrobić? Możemy wykorzystać tablice. Do konstruktora
+przekażemy tablicę, która będzie zawierała wartości dowolnych właściwości.
+
+Wywołanie przyjmie postać:
+
+$o = new Ososba(array('nazwisko' => 'Nowak'));
+
+Implementacja takiego rozwiązania może być następująca:
+
+
+    public function __construct($options)
+    {
+
+         // Czy w tablicy $options jest zawarte imie?
+         // Jeśli tak, to przepisz je do składowej imie
+         if (isset($options['imie'])) {
+             $this->imie = $options['imie'];
+         }
+
+         // Czy w tablicy $options jest zawarte nazwisko?
+         // Jeśli tak, to przepisz je do składowej nazwisko
+         if (isset($options['nazwisko'])) {
+             $this->nazwisko = $options['nazwisko'];
+         }
+
+         // Czy w tablicy $options jest zawarty wiek?
+         // Jeśli tak, to przepisz go do składowej wiek
+         if (isset($options['wiek'])) {
+             $this->wiek = $options['wiek'];
+         }
+
+    }
+
+Powyższy konstruktor umożliwia wywołania:
+
+$o = new Ososba(array());
+$o = new Ososba(array('nazwisko' => 'Nowak'));
+$o = new Ososba(array('nazwisko' => 'Nowak', 'imie' => 'Stefan'));
+$o = new Ososba(array('wiek' => 12, 'imie' => 'Marek'));
+
+
+
+
+
+
+
+
 
 
 
