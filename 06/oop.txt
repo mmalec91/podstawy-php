@@ -319,6 +319,22 @@ obiektu oddzielone spacjami?
 
 Przykład __set_state
 
+Metoda var_export() generuje rozszerzone informacje o obiekcie.
+Zwracany jako wynik kod PHP ma postać:
+
+    Osoba::__set_state(array( 'imie' => 'Jan', 'nazwisko' => 'Kowalski', 'wiek' => 16, ))
+
+Kod ten możemy ręcznie wykonać wywołując metodę eval:
+
+    eval('$x = ' . var_export($obj, true) . ';');
+
+W przypadku metody __set_state nie ma miejsca automatyczne wywołanie takie,
+jak w przypadku metod __construct i __toString.
+
+
+
+
+
 
 
 
