@@ -151,7 +151,80 @@ $o = new Ososba(array('nazwisko' => 'Nowak'));
 $o = new Ososba(array('nazwisko' => 'Nowak', 'imie' => 'Stefan'));
 $o = new Ososba(array('wiek' => 12, 'imie' => 'Marek'));
 
+$o = new Ososba(array('imie' => 'John'));
 
+
+Wywołanie, w którym podajemy
+- tylko imię
+- imię i nazwisko,
+- imię, nazwisko i wiek
+chcielibyśmy wywoływać:
+
+
+$o = new Osoba('Piotr');
+$o = new Osoba('Adam', 'Kowalski');
+$o = new Osoba('Nikodem', 'Dyzma', 49);
+
+
+Chcemy połączyć rozwiązania:
+
+    $o = new Osoba('Piotr');
+oraz
+    $o = new Ososba(array('nazwisko' => 'Nowak'));
+
+Implementacja takiego rozwiązania wykorzystuje funkcje sprawdzające
+typ zmiennej:
+   is_string()  -  wynik logiczny true mówi, że parametr jest typu string
+   is_array()   -  wynik logiczny true mówi, że parametr jest tablicą
+   is_integer() -  wynik logiczny true mówi, że parametr jest zmienną całkowitoliczbową
+
+
+    public function __construct($options = null, $nazwisko = null, $wiek = null)
+    {
+         if (is_string($options)) {
+             $this->imie = $options;
+             if (is_string($nazwisko)) {
+                 $this->nazwisko = $nazwisko;
+             }
+             if (is_integer($wiek)) {
+                 $this->wiek = $wiek;
+             }
+         } else if (is_array($options) {
+
+             // Czy w tablicy $options jest zawarte imie?
+             // Jeśli tak, to przepisz je do składowej imie
+             if (isset($options['imie'])) {
+                 $this->imie = $options['imie'];
+             }
+
+             // Czy w tablicy $options jest zawarte nazwisko?
+             // Jeśli tak, to przepisz je do składowej nazwisko
+             if (isset($options['nazwisko'])) {
+                 $this->nazwisko = $options['nazwisko'];
+             }
+
+             // Czy w tablicy $options jest zawarty wiek?
+             // Jeśli tak, to przepisz go do składowej wiek
+             if (isset($options['wiek'])) {
+                 $this->wiek = $options['wiek'];
+             }
+
+         }
+    }
+
+
+Powyższa implementacja pozwala na wywołania:
+
+    $o = new Osoba();
+    $o = new Osoba('Piotr');
+    $o = new Osoba('Piotr', 'Kowalski');
+    $o = new Osoba('Piotr', 'Kowalski', 44);
+    $o = new Ososba(array());
+    $o = new Ososba(array('nazwisko' => 'Nowak'));
+    $o = new Ososba(array(
+        'nazwisko' => 'Nowak',
+        'wiek' => 37
+    ));
 
 
 
