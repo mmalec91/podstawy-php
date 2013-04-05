@@ -3,11 +3,11 @@ TDD - Test Driven Development
 Programowanie sterowane testami
 
 Obecnie jest to jedna z powszechnie stosowanych metod
-zapewniania jako¶ci kodu.
+zapewniania jakoÅ›ci kodu.
 
-W jêzyku PHP testy oprogramowujemy wykorzystuj±c narzêdzie PHPUnit.
+W jÄ™zyku PHP testy oprogramowujemy wykorzystujÄ…c narzÄ™dzie PHPUnit.
 
-PHPUnit to ¶rodowisko do uruchamiania testów jednostkowych.
+PHPUnit to Å›rodowisko do uruchamiania testÃ³w jednostkowych.
 
 1) Instalacja PHPUnit.
 
@@ -17,16 +17,16 @@ Phpunit uruchamiamy w konsoli poleceniem:
 
 phpunit
 
-Pe³ne wywo³anie:
+PeÅ‚ne wywoÅ‚anie:
 
 C:\xampp\php\phpunit --version
 
 
-2) Pierwsze u¿ycie
+2) Pierwsze uÅ¼ycie
 
-Zadanie programistyczne: napisz klasê Reader,
-która u³atwi wczytywanie i przetwarzenie plików tekstowych.
-Mamy uzyskaæ dostêp do poszczególnych wierszy pliku
+Zadanie programistyczne: napisz klasÄ™ Reader,
+ktÃ³ra uÅ‚atwi wczytywanie i przetwarzenie plikÃ³w tekstowych.
+Mamy uzyskaÄ‡ dostÄ™p do poszczegÃ³lnych wierszy pliku
 oraz do liczby odczytanych wierszy.
 
 
@@ -34,39 +34,39 @@ Klasa: Janek\File\Txt\Reader
 Plik:  Reader.php
 
 Interfejs klasy:
-   konstruktor: umo¿liwia podanie nazwy pliku
+   konstruktor: umoÅ¼liwia podanie nazwy pliku
    setFilename(), getFilename() - ustalanie i odczyt nazwy pliku
    load()       - odczytuje podany plik
    getItem($i)  - zwraca ity wiersz odczytany z pliku
-   getCount()   - liczba odczytanych elementów
-   getItems()   - zwraca ca³± kolekcjê elementów
+   getCount()   - liczba odczytanych elementÃ³w
+   getItems()   - zwraca caÅ‚Ä… kolekcjÄ™ elementÃ³w
 
 
 $plik = new Reader('dane/auta.txt');
 $plik->load();
-echo $plik->getItem(5);    // wydruk pi±tego wiersza
-echo $plik->getCount();    // zwraca liczbê elementów
+echo $plik->getItem(5);    // wydruk piÄ…tego wiersza
+echo $plik->getCount();    // zwraca liczbÄ™ elementÃ³w
 
 
-Przygotowanie testów jednostkowych:
+Przygotowanie testÃ³w jednostkowych:
 a) plik phpunit.xml
 b) katalog Tests
 c) plik Tests/ReaderTest.php
 d) bootstrap.php
 
-Plik bootstrap.php jest uruchamiany dziêki instrukcji instalacyjnej
-z pliku phpunit.xml. Bootstrap.php odpowiada za za³adowanie
-testowanej klasy (autoloading). W kodzie bootstrap.php wystêpuj±:
+Plik bootstrap.php jest uruchamiany dziÄ™ki instrukcji instalacyjnej
+z pliku phpunit.xml. Bootstrap.php odpowiada za zaÅ‚adowanie
+testowanej klasy (autoloading). W kodzie bootstrap.php wystÄ™pujÄ…:
 
-    __DIR__  - sta³a wskazuj±ca folder, w którym
-               jest umieszczony bie¿±cy skrypt
+    __DIR__  - staÅ‚a wskazujÄ…ca folder, w ktÃ³rym
+               jest umieszczony bieÅ¼Ä…cy skrypt
 
-    DIRECTORY_SEPARATOR - znak, który jest separatorem katalogów:
+    DIRECTORY_SEPARATOR - znak, ktÃ³ry jest separatorem katalogÃ³w:
         w Windows \
         w Linux   /
 
 
-Uruchamiane testy s± ustalone w pliku XML:
+Uruchamiane testy sÄ… ustalone w pliku XML:
         <testsuite name="Reader Test Suite">
             <directory>./Tests/</directory>
         </testsuite>
@@ -81,12 +81,12 @@ Metoda:         def
 Metoda testowa: defTest
 
 
-Klasa AbcTest ma dziedziczyæ po klasie \PHPUnit_Framework_TestCase.
-Przestrzeñ nazw klasy testowej powstaje przez dodanie do przestrzeni
-klasy cz³onu Texts.
+Klasa AbcTest ma dziedziczyÄ‡ po klasie \PHPUnit_Framework_TestCase.
+PrzestrzeÅ„ nazw klasy testowej powstaje przez dodanie do przestrzeni
+klasy czÅ‚onu Texts.
 
 
-Po przygotowaniu plików:
+Po przygotowaniu plikÃ³w:
     phpunit.xml
     Tests/bootstrap.php
     AbsTest.php
@@ -95,22 +95,8 @@ testy uruchamiammy poleceniem:
 
     C:\xampp\php\phpunit
 
-lub (gdy ¶cie¿ki dostêpu s± skonfigurowane)
+lub (gdy Å›cieÅ¼ki dostÄ™pu sÄ… skonfigurowane)
 
     phpunit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

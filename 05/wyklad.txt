@@ -1,22 +1,22 @@
-1. Composer (uøycie w celu automatycznego generowania autoloadingu)
+1. Composer (u≈ºycie w celu automatycznego generowania autoloadingu)
 
-Menadøer zaleøno∂ci Composer dzia≥a na podstawie pliku composer.json.
+Menad≈ºer zale≈ºno≈õci Composer dzia≈Ça na podstawie pliku composer.json.
 Plik ten jest w formacie JSON (JavaScript Object Notation).
 
-Bibliografia o jÍzyku JSON:
+Bibliografia o jƒôzyku JSON:
 
     http://pl.wikipedia.org/wiki/JSON
     http://en.wikipedia.org/wiki/JSON
     http://www.json.org/
 
 My wykorzystamy oprogramowanie composer do generowania
-plikÛw autoload.php.
+plik√≥w autoload.php.
 
 
-W celu uruchomienia programu composer naleøy najpierw przygotowaÊ plik
+W celu uruchomienia programu composer nale≈ºy najpierw przygotowaƒá plik
 composer.json.
 
-Przyk≥adowa zawarto∂Ê pliku composer.json:
+Przyk≈Çadowa zawarto≈õƒá pliku composer.json:
 
 
             {
@@ -40,23 +40,23 @@ oprogramowanie composer utworzy folder vendor/, a w nim plik autoload.php.
 
 2. TDD 
  Po co?
- - sprawdzamy dzia≥anie kaødej funkcji z osobna (wyizolowanej)
- - usuwamy 95% b≥ÍdÛw
+ - sprawdzamy dzia≈Çanie ka≈ºdej funkcji z osobna (wyizolowanej)
+ - usuwamy 95% b≈Çƒôd√≥w
  - jest to obecnie standard produkcji oprogramowania
-   stosowany przez wiÍkszo∂Ê firm
+   stosowany przez wiƒôkszo≈õƒá firm
 
 
-3. TDD w praktyce: przyk≥ad minimalny
+3. TDD w praktyce: przyk≈Çad minimalny
 
 Pliki:
-- Tablica.php   - testowana klasa (pe≥na nazwa: Janek\Util\Tablica)
-- phpunit.xml   - konfiguracja testÛw jednostkowych
-- composer.json - zaleøno∂ci, ktÛre wykorzystamy do generowania plikÛw
+- Tablica.php   - testowana klasa (pe≈Çna nazwa: Janek\Util\Tablica)
+- phpunit.xml   - konfiguracja test√≥w jednostkowych
+- composer.json - zale≈ºno≈õci, kt√≥re wykorzystamy do generowania plik√≥w
                   autoload.php
-- TablicaTest.php - klasa testÛw
+- TablicaTest.php - klasa test√≥w
 
 
-Tre∂Ê plikÛw (Klasa Gajdaw\Util\Tablica):
+Tre≈õƒá plik√≥w (Klasa Gajdaw\Util\Tablica):
 -----------------------------------------
 Tablica.php
 <?php
@@ -106,9 +106,9 @@ class TablicaTest extends \PHPUnit_Framework_TestCase
 }
 
 
-4. Uruchomienie przyk≥adu minimalnego TDD
+4. Uruchomienie przyk≈Çadu minimalnego TDD
 
-Je∂li phpunit i composer s± dostÍpne w ∂cieøkach:
+Je≈õli phpunit i composer sƒÖ dostƒôpne w ≈õcie≈ºkach:
 
     composer install
     phpunit
@@ -124,18 +124,5 @@ Na pracowni:
 Pokrycie testami:
 
     phpunit  --coverage-html coverage/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

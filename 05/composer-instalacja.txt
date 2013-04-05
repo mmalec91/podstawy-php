@@ -1,5 +1,5 @@
 Composer - dependency manager - instalacja
-(menadøer zaleøno∂ci)
+(menad≈ºer zale≈ºno≈õci)
 
 getComposer.org
 
