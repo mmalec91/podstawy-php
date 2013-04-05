@@ -35,4 +35,77 @@ $obj->setNazwisko('Nowak');
 
 Jeśli konstruktor ma parametr, np:
 
+    public function __construct($imie)
+    {
+        $this->imie = $imie;
+    }
+
+Wtedy utowrzenie obiektu ma postać:
+
+$obj = new Osoba('Henryk');
+
+W przypadku definicji konstruktora:
+
+    public function __construct($imie)
+
+wówczas instrukcja:
+
+    $obj = new Osoba();
+
+będzie błędna.
+
+Jeśli chcemy przekazać parametr w taki sposób, by był on opcjnalny, wówczas
+ustalamy domyślną wartość parametru na null:
+
+
+    public function __construct($imie = null)
+    {
+        $this->imie = $imie;
+    }
+
+Taka definicja konstruktora pozwala na wywołania:
+
+    $o1 = new Osoba();
+    $o2 = new Osoba('Krzysztof');
+
+Rozwińmy to rozwiązanie na kilka parametrów, np. imię, nazwisko i wiek:
+
+
+class Osoba
+{
+    private $imie;
+    private $nazwisko;
+    private $wiek;
+
+    public function __construct($imie = null, $nazwisko = null, $wiek = null)
+    {
+        $this->imie = $imie;
+        $this->nazwisko = $nazwisko;
+        $this->wiek = $wiek;
+    }
+
+    public setImie($imie)
+    {
+    }
+
+    public setNazwisko($nazwisko)
+    {
+    }
+
+    public setWiek($wiek)
+    {
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
